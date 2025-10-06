@@ -14,7 +14,8 @@ https://github.com/daaru00/obsidian-aws-s3-sync/
 export default {
   input: './src/main.ts',
   output: {
-    dir: '.',
+	file: './main.js',
+	inlineDynamicImports: true,
     sourcemap: 'inline',
     format: 'cjs',
     exports: 'default',
@@ -23,7 +24,7 @@ export default {
   external: ['obsidian', 'fs', 'os', 'child_process', 'path', 'crypto', 'buffer', 'process', 'stream', 'https', 'http', 'http2'],
   plugins: [
     typescript(),
-    nodeResolve({browser: true}),
+    nodeResolve(),
     commonjs(),
     json()
   ]
